@@ -14,7 +14,7 @@
 
 char playarea[3][3] = { 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a' };
 char player, opp;
-bool o, gameEnded;
+bool o, gameEnded, selError;
 
 void cls()
 {
@@ -167,26 +167,33 @@ void start()
 	cls();
 	printf("~~~COMMAND LINE TIC-TAC-TOE~~~\n      ~~~BY aemiliu5~~~\n");
 	printf("Play as X or O?: ");
+
+	if(selError)
+		printf("Invalid value. Please type X or O, then press space.\n");
 	
 	scanf("%c", &player);
+
 	if(player == 'x' || player == 'X')
 	{
 		o = false;
 		opp = 'o';
+
+		cls();
+		printTable();
 	}
 	else if(player == 'o' || player == 'O')
 	{
 		o = true;
 		opp = 'x';
+
+		cls();
+		printTable();
 	}
 	else
 	{
-		o = true;
-		opp = 'x';
+		selError = true;
+		start();
 	}
-
-	cls();
-	printTable();
 }
 
 void loop()
