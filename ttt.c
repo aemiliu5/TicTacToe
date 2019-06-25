@@ -134,7 +134,7 @@ void Start()
 	srand(time(NULL));
 
 	ClearConsole();
-	printf("~~~COMMAND LINE TIC-TAC-TOE~~~\n      ~~~BY aemiliu5~~~\n");
+	printf("~~~TIC-TAC-TOE~~~\n~~~BY aemiliu5~~~\n");
 	printf("Play as X or O?:");
 
 	if(selError)	printf("\nInvalid value. Please type X or O, then press space.\n");
